@@ -1,0 +1,117 @@
+Dataset loaded successfully!
+
+First 5 rows of the dataset:
+   student_id  hours_studied  ...  gender  exam_score
+0           1              5  ...  Female          65
+1           2              8  ...    Male          78
+2           3             12  ...  Female          88
+3           4              3  ...    Male          55
+4           5             10  ...  Female          82
+
+[5 rows x 6 columns]
+
+Dataset Info:
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 20 entries, 0 to 19
+Data columns (total 6 columns):
+ #   Column                 Non-Null Count  Dtype 
+---  ------                 --------------  ----- 
+ 0   student_id             20 non-null     int64 
+ 1   hours_studied          20 non-null     int64 
+ 2   previous_score         20 non-null     int64 
+ 3   attendance_percentage  20 non-null     int64 
+ 4   gender                 20 non-null     object
+ 5   exam_score             20 non-null     int64 
+dtypes: int64(5), object(1)
+memory usage: 1.1+ KB
+
+--- Descriptive Statistics ---
+        student_id  hours_studied  ...  gender  exam_score
+count     20.00000      20.000000  ...      20   20.000000
+unique         NaN            NaN  ...       2         NaN
+top            NaN            NaN  ...  Female         NaN
+freq           NaN            NaN  ...      10         NaN
+mean      10.50000       8.300000  ...     NaN   75.250000
+std        5.91608       3.672085  ...     NaN   12.199547
+min        1.00000       2.000000  ...     NaN   50.000000
+25%        5.75000       5.750000  ...     NaN   67.750000
+50%       10.50000       8.000000  ...     NaN   75.500000
+75%       15.25000      11.000000  ...     NaN   83.500000
+max       20.00000      15.000000  ...     NaN   95.000000
+
+[11 rows x 6 columns]
+
+--- Missing Values ---
+student_id               0
+hours_studied            0
+previous_score           0
+attendance_percentage    0
+gender                   0
+exam_score               0
+dtype: int64
+
+--- Correlation Matrix (Numerical Features) ---
+                       hours_studied  ...  exam_score
+hours_studied               1.000000  ...    0.983954
+previous_score              0.982562  ...    0.992176
+attendance_percentage       0.882522  ...    0.924847
+exam_score                  0.983954  ...    1.000000
+
+[4 rows x 4 columns]
+
+Features selected: ['hours_studied', 'previous_score', 'attendance_percentage', 'gender']
+Target selected: exam_score
+Numerical features for preprocessing: ['hours_studied', 'previous_score', 'attendance_percentage']
+Categorical features for preprocessing: ['gender']
+
+Training set size: 16 samples
+Testing set size: 4 samples
+
+--- Training Linear Regression ---
+Linear Regression Evaluation:
+  Mean Absolute Error (MAE): 2.01
+  Mean Squared Error (MSE): 5.15
+  Root Mean Squared Error (RMSE): 2.27
+  R-squared (R2): 0.84
+
+--- Training Random Forest Regressor ---
+Random Forest Regressor Evaluation:
+  Mean Absolute Error (MAE): 3.44
+  Mean Squared Error (MSE): 15.52
+  Root Mean Squared Error (RMSE): 3.94
+  R-squared (R2): 0.50
+
+--- Training Gradient Boosting Regressor ---
+Gradient Boosting Regressor Evaluation:
+  Mean Absolute Error (MAE): 2.78
+  Mean Squared Error (MSE): 11.91
+  Root Mean Squared Error (RMSE): 3.45
+  R-squared (R2): 0.62
+
+--- Model Comparison ---
+
+Linear Regression:
+  MAE: 2.01
+  MSE: 5.15
+  RMSE: 2.27
+  R2: 0.84
+
+Gradient Boosting Regressor:
+  MAE: 2.78
+  MSE: 11.91
+  RMSE: 3.45
+  R2: 0.62
+
+Random Forest Regressor:
+  MAE: 3.44
+  MSE: 15.52
+  RMSE: 3.94
+  R2: 0.50
+
+--- Making a Prediction using the Best Model: Linear Regression ---
+Predicted exam score for the new student (Hours: 9, Prev: 70, Att: 88%, Gender: Male): 77.75
+Predicted exam score for another student (Hours: 16, Prev: 92, Att: 99%, Gender: Female): 98.19
+
+--- Project Complete ---
+You can now experiment with different features, models, or new student data.
+Remember to install necessary libraries if you haven't already: pip install pandas scikit-learn matplotlib seaborn numpy
